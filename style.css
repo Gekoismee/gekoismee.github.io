@@ -9,3 +9,6 @@ h1{
 #name{
     color:chartreuse;
 }
+.contrast {
+    filter: contrast(180%);
+  }
