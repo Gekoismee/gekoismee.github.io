@@ -1,9 +1,12 @@
 h1{
-    color:chartreuse;
+    color:lightseagreen;
 }
 .btn1{
     color:blue;
 }
 .nav{
     color:aquamarine;
+}
+#name{
+    color:chartreuse;
 }
