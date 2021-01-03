@@ -5,6 +5,8 @@ h1{
 }
 h4{
     color:chartreuse;
+    text-align: center;
+    align-items: center;
 }
 .btn1{
     color:blue;
