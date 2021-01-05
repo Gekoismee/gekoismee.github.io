@@ -1,3 +1,8 @@
+body{
+    margin: 0;
+    background: black;
+    overflow: hidden;
+}
 h1{
     color:lightseagreen;
     text-align: center;
