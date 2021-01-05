@@ -16,6 +16,9 @@ h4{
 .btn1{
     color:blue;
 }
+#main{
+    opacity: 0;
+}
 #name{
     color:chartreuse;
 }
