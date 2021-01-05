@@ -39,9 +39,10 @@ let update = () => {
     letter1.innerText = lett1.t;
     i++;
 
-    if (i < anim.length)
+    if (i < anim.length){
         setTimeout(update, step.ms / stepDenominator);
-    else {
+        setTimeout(update, lett1.ms / stepDenominator);
+    }else {
         header.classList.add('top');
         setTimeout(() => {
             document.getElementById('main').style.opacity = 1;
