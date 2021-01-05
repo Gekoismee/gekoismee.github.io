@@ -15,10 +15,6 @@ let anim = [
     { t: "Gekoisme_", ms: 200 },
     { t: "Gekoismee_", ms: 200 },
     { t: "Gekoismee", ms: 200 },
-    { t: "Gekoismee_", ms: 200 },
-    { t: "Gekoismee", ms: 200 },
-    { t: "Gekoismee_", ms: 200 },
-    { t: "Gekoismee", ms: 200 },
     { t: "Gekoismee", ms: 200 },
 ];
 
