@@ -20,6 +20,9 @@ h4{
 }
 #main{
     opacity: 0;
+    transition: 0.5s;
+	color: white;
+	margin-top: 60px;
 }
 #name{
     color:chartreuse;
