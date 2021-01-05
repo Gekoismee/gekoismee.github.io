@@ -1,5 +1,4 @@
 let header = document.querySelector('#intro');
-let letter1 = document.querySelector('#letter1');
 
 let anim = [
     { t: " ", ms: 200 },
@@ -22,11 +21,7 @@ let anim = [
     { t: "Gekoismee", ms: 200 },
     { t: "Gekoismee", ms: 200 },
 ];
-let let1 = [
-    { t: " ", ms: 800},
-    { t: "e", ms: 200},
-    { t: "", ms: 2800},
-];
+
 
 let stepDenominator = 1;
 if (window.localStorage.stepDenominator)
@@ -34,14 +29,11 @@ if (window.localStorage.stepDenominator)
 let i = 0;
 let update = () => {
     let step = anim[i];
-    let lett1 = let1[i];
     header.innerText = step.t;
-    letter1.innerText = lett1.t;
     i++;
 
     if (i < anim.length){
         setTimeout(update, step.ms / stepDenominator);
-        setTimeout(update, lett1.ms / stepDenominator);
     }else {
         header.classList.add('top');
         setTimeout(() => {
