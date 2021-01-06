@@ -3,11 +3,10 @@ onload = function() {
 
     let timer = setInterval(function() {
     let timePassed = Date.now() - start;
-
-  intro.style.left = timePassed / 5 + 'px';
-  intro.style.color = "white";
-
-  if (timePassed > 2000) {
+  letter2.style.left = timePassed / 5 + 'px';
+  letter2.style.color = "lightseagreen";
+  if (timePassed > 5000) {
+      letter1.style.color = "lightseagreen";
       clearInterval(timer);
   }
 }, 1);
