@@ -13,21 +13,7 @@
             <h2>Welcome to my website, use the links below to see my projects.</h2>
         </div>
         <!-- Scripts -->
-        <script>
-            intro.onclick = function() {
-            let start = Date.now();
-
-            let timer = setInterval(function() {
-            let timePassed = Date.now() - start;
-
-          intro.style.left = timePassed / 5 + 'px';
-          intro.style.color = "white";
-
-          if (timePassed > 2000) clearInterval(timer);
-
-        }, 1);
-      }
-        </script>
+        <script typr="text/javascript" src="js/intro_animation.js"></script>
        <!-- <script type="text/javascript" src="js/intro.js"></script>-->
     </body>
 </html>
