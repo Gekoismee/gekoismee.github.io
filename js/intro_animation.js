@@ -1,4 +1,4 @@
-intro.onclick = function() {
+intro = function() {
     let start = Date.now();
 
     let timer = setInterval(function() {
