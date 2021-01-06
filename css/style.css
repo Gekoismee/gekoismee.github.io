@@ -40,6 +40,12 @@ p{
 .btn1{
     color:blue;
 }
+#letter1{
+    color: black;
+}
+#letter2{
+    color: black;
+}
 #main{
     opacity: 0;
     transition: 0.5s;
