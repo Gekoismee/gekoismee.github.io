@@ -6,6 +6,7 @@ onload = function() {
   letter2.style.left = timePassed / 5 + 'px';
   letter2.style.color = "lightseagreen";
   if (timePassed > 5000) {
+      letter1.innerHTML = "G";
       letter1.style.color = "lightseagreen";
       clearInterval(timer);
   }
