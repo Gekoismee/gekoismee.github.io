@@ -1,4 +1,4 @@
-intro = function() {
+onload = function() {
     let start = Date.now();
 
     let timer = setInterval(function() {
