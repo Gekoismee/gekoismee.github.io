@@ -62,10 +62,7 @@ let update = () => {
     if (i < anim.length){
         setTimeout(update, step.ms / stepDenominator);
     }else {
-        let1.classList.add('top');
-        let2.classList.add('top');
-        let3.classList.add('top');
-        let4.classList.add('top');
+        full.classList.add('top');
         setTimeout(() => {
             document.getElementById('main').style.opacity = 1;
         }, 500);
