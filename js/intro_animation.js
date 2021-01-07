@@ -18,7 +18,7 @@ let anim =[
   {c:"lightseagreen", ms: 100, l:"24%", t:"24%", b:"24%", r:"24%"},
   {c:"lightseagreen", ms: 100, l:"26%", t:"26%", b:"26%", r:"26%"},
   {c:"lightseagreen", ms: 100, l:"28%", t:"28%", b:"28%", r:"28%"},
-  {c:"lightseagreen", ms: 100, l:"30", t:"30%", b:"30%", r:"30%"},
+  {c:"lightseagreen", ms: 100, l:"30%", t:"30%", b:"30%", r:"30%"},
   {c:"lightseagreen", ms: 100, l:"32%", t:"32%", b:"32%", r:"32%"},
   {c:"lightseagreen", ms: 100, l:"34%", t:"34%", b:"34%", r:"34%"},
   {c:"lightseagreen", ms: 100, l:"36%", t:"36%", b:"36%", r:"36%"},
