@@ -52,12 +52,14 @@ let update = () => {
     let3.style.top = step.b;
     let4.style.left = step.r;
     i++;
+    if(i>25){
+      full.style.opacity="100%"
+    }
     if (i>26){
       let1.innerHTML="";
       let2.innerHTML="";
       let3.innerHTML="";
       let4.innerHTML="";
-      full.style.opacity="100%"
     }
     if (i < anim.length){
         setTimeout(update, step.ms / stepDenominator);
