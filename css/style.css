@@ -40,6 +40,9 @@ p{
 .btn1{
     color:blue;
 }
+.intro{
+    color:black;
+}
 #main{
     opacity: 0;
     transition: 0.5s;
