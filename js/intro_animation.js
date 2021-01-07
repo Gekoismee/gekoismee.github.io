@@ -2,6 +2,8 @@ let let1 = document.getElementById('let1');
 let let2 = document.getElementById('let2');
 let let3 = document.getElementById('let3');
 let let4 = document.getElementById('let4');
+let full = document.getElementById('full');
+let full2 = document.getElementById('full2');
 
 let anim =[
   { ms: 100, l:"0%", t:"0%", b:"100%", r:"100%"},
@@ -50,7 +52,13 @@ let update = () => {
     let3.style.top = step.b;
     let4.style.left = step.r;
     i++;
-
+    if (i>26){
+      let1.innerHTML="";
+      let2.innerHTML="";
+      let3.innerHTML="";
+      let4.innerHTML="";
+      full.style.opacity="100%"
+    }
     if (i < anim.length){
         setTimeout(update, step.ms / stepDenominator);
     }else {
