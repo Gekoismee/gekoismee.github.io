@@ -5,7 +5,7 @@ onload = function() {
     let timePassed = Date.now() - start;
   letter2.style.left = timePassed / 5 + 'px';
   letter2.style.color = "lightseagreen";
-  if (timePassed > 4474) {
+  if (timePassed > 5000) {
       letter1.innerHTML = "Ge";
       letter2.innerHTML ="";
       letter1.style.color = "lightseagreen";
