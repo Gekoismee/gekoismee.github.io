@@ -44,8 +44,8 @@ let update = () => {
     let4.style.color = step.c;
     let1.style.left = step.l;
     let2.style.top = step.t;
-    let3.style.bottom = step.b;
-    let4.style.right = step.r;
+    let3.style.top = step.b;
+    let4.style.left = step.r;
     i++;
 
     if (i < anim.length){
