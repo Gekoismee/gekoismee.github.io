@@ -13,6 +13,22 @@ let anim =[
   {c:"lightseagreen", ms: 100, l:"12%", t:"12%", b:"12%", r:"12%"},
   {c:"lightseagreen", ms: 100, l:"14%", t:"14%", b:"14%", r:"14%"},
   {c:"lightseagreen", ms: 100, l:"16%", t:"16%", b:"16%", r:"16%"},
+  {c:"lightseagreen", ms: 100, l:"18%", t:"18%", b:"18%", r:"18%"},
+  {c:"lightseagreen", ms: 100, l:"20%", t:"20%", b:"20%", r:"20%"},
+  {c:"lightseagreen", ms: 100, l:"24%", t:"24%", b:"24%", r:"24%"},
+  {c:"lightseagreen", ms: 100, l:"26%", t:"26%", b:"26%", r:"26%"},
+  {c:"lightseagreen", ms: 100, l:"28%", t:"28%", b:"28%", r:"28%"},
+  {c:"lightseagreen", ms: 100, l:"30", t:"30%", b:"30%", r:"30%"},
+  {c:"lightseagreen", ms: 100, l:"32%", t:"32%", b:"32%", r:"32%"},
+  {c:"lightseagreen", ms: 100, l:"34%", t:"34%", b:"34%", r:"34%"},
+  {c:"lightseagreen", ms: 100, l:"36%", t:"36%", b:"36%", r:"36%"},
+  {c:"lightseagreen", ms: 100, l:"38%", t:"38%", b:"38%", r:"38%"},
+  {c:"lightseagreen", ms: 100, l:"40%", t:"40%", b:"40%", r:"40%"},
+  {c:"lightseagreen", ms: 100, l:"42%", t:"42%", b:"42%", r:"42%"},
+  {c:"lightseagreen", ms: 100, l:"44%", t:"44%", b:"44%", r:"44%"},
+  {c:"lightseagreen", ms: 100, l:"46%", t:"46%", b:"46%", r:"46%"},
+  {c:"lightseagreen", ms: 100, l:"48%", t:"48%", b:"48%", r:"48%"},
+  {c:"lightseagreen", ms: 100, l:"50%", t:"50%", b:"50%", r:"50%"}
 ]
 
 let stepDenominator = 1;
