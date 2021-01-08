@@ -33,7 +33,7 @@ let update = () => {
       let3.innerHTML="";
       let4.innerHTML="";
     }
-    if (i>30){
+    if (i<30){
         setTimeout(update, ms / stepDenominator);
     }else {
         full.classList.add('top');
