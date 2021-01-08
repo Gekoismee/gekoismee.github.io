@@ -14,10 +14,10 @@ let l = 0;
 let t = 0;
 let update = () => {
 
-    let1.style.left = l;
-    let2.style.top = t;
-    let3.style.top = (100-t);
-    let4.style.left = (100-l);
+    let1.style.left = (l+"%");
+    let2.style.top = (t+"%");
+    let3.style.top = ((100-t)+"%");
+    let4.style.left = ((100-l)+"%");
     i++;
     if(l<=50){
     l = l+2;
