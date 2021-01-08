@@ -5,7 +5,7 @@ let let4 = document.getElementById('let4');
 let full = document.getElementById('full');
 let full2 = document.getElementById('full2');
 
-let stepDenominator = 1;
+let stepDenominator = 0.5;
 if (window.localStorage.stepDenominator)
     stepDenominator = window.localStorage.stepDenominator;
 let i = 0;
