@@ -66,7 +66,7 @@ let anim =[
   { ms: 70, l:"50%", t:"50%", b:"50%", r:"50%", o:"100%"}
 ]
 
-let stepDenominator = 1;
+let stepDenominator = 2;
 if (window.localStorage.stepDenominator)
     stepDenominator = window.localStorage.stepDenominator;
 let i = 0;
