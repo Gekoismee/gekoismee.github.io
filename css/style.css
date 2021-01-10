@@ -51,6 +51,7 @@ p{
     top: 50%;
     left: 50%;
     opacity: 0%;
+    transform: translateX(-50%) translateY(-50%);
 }
 #full2{
     color:lightseagreen;
