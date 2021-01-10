@@ -44,6 +44,7 @@ p{
 .intro{
     color:black;
     z-index: 1;
+    opacity: .1%;
 }
 #full{
     color:lightseagreen;
