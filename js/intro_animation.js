@@ -77,7 +77,7 @@ let update = () => {
     let3.style.top = step.b;
     let4.style.left = step.r;
     i++;
-    if(i>25){
+    if(i>24){
       full.style.opacity="100%"
     }
     if (i>26){
