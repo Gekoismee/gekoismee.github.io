@@ -42,18 +42,6 @@ let anim =[
   { ms: 70, l:"50%", t:"50%", b:"50%", r:"50%", o:"40%"},
   { ms: 70, l:"50%", t:"50%", b:"50%", r:"50%", o:"45%"},
   { ms: 70, l:"50%", t:"50%", b:"50%", r:"50%", o:"50%"},
-  { ms: 70, l:"50%", t:"50%", b:"50%", r:"50%", o:"45%"},
-  { ms: 70, l:"50%", t:"50%", b:"50%", r:"50%", o:"40%"},
-  { ms: 70, l:"50%", t:"50%", b:"50%", r:"50%", o:"35%"},
-  { ms: 70, l:"50%", t:"50%", b:"50%", r:"50%", o:"30%"},
-  { ms: 70, l:"50%", t:"50%", b:"50%", r:"50%", o:"25%"},
-  { ms: 70, l:"50%", t:"50%", b:"50%", r:"50%", o:"20%"},
-  { ms: 70, l:"50%", t:"50%", b:"50%", r:"50%", o:"25%"},
-  { ms: 70, l:"50%", t:"50%", b:"50%", r:"50%", o:"30%"},
-  { ms: 70, l:"50%", t:"50%", b:"50%", r:"50%", o:"35%"},
-  { ms: 70, l:"50%", t:"50%", b:"50%", r:"50%", o:"40%"},
-  { ms: 70, l:"50%", t:"50%", b:"50%", r:"50%", o:"45%"},
-  { ms: 70, l:"50%", t:"50%", b:"50%", r:"50%", o:"50%"},
   { ms: 70, l:"50%", t:"50%", b:"50%", r:"50%", o:"55%"},
   { ms: 70, l:"50%", t:"50%", b:"50%", r:"50%", o:"60%"},
   { ms: 70, l:"50%", t:"50%", b:"50%", r:"50%", o:"65%"},
@@ -66,9 +54,6 @@ let anim =[
   { ms: 70, l:"50%", t:"50%", b:"50%", r:"50%", o:"100%"}
 ]
 
-let stepDenominator = 2;
-if (window.localStorage.stepDenominator)
-    stepDenominator = window.localStorage.stepDenominator;
 let i = 0;
 let update = () => {
     let step = anim[i];
@@ -77,10 +62,8 @@ let update = () => {
     let3.style.top = step.b;
     let4.style.left = step.r;
     i++;
-    if(i>23){
-      full.style.opacity="100%"
-    }
     if (i>26){
+      full.style.opacity="100%"
       let1.innerHTML="";
       let2.innerHTML="";
       let3.innerHTML="";
@@ -88,13 +71,12 @@ let update = () => {
       full2.style.opacity= step.o;
     }
     if (i < anim.length){
-        setTimeout(update, step.ms / stepDenominator);
+        setTimeout(update, step.ms / 2);
     }else {
         full.classList.add('top');
         setTimeout(() => {
             document.getElementById('main').style.opacity = 1;
         }, 500);
-        window.localStorage.stepDenominator = 2;
     }
 }
 update();
