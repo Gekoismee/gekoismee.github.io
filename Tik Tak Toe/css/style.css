@@ -1,0 +1,36 @@
+#game{
+    width:100%;
+    text-align: center;
+    position: absolute;
+    z-index: 100;
+}
+#game-background{
+    width:100%;
+    text-align: center;
+    position: absolute;
+    z-index: -100;
+}
+#header{
+    width:100%;
+    text-align: center;
+}
+#resetButton{
+    color:lightseagreen;
+    background-color: black;
+}
+body{
+    background-color: black;
+    width:100%;
+}
+button{
+    color:lightseagreen;
+    background-color: black;
+}
+h1{
+    color:lightseagreen;
+    text-align: center;
+}
+h4{
+    color:lightseagreen;
+    text-align: center;
+}
