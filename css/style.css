@@ -2,8 +2,12 @@ body{
     background: black;
     overflow: hidden;
 }
-h1{
+button{
+    background-color: black;
     color:lightseagreen;
+}
+h1{
+    color:#20b2aa;
     top: 50%;
     left: 50%;
     position: absolute;
@@ -17,33 +21,35 @@ h1.top{
     left: 110px;
 }
 h2{
-    color:lightseagreen;
+    color:#20b2aa;
     text-align: center;
     margin: 0;
 }
 h3{
-    color:lightseagreen;
+    color:#20b2aa;
     text-align: center;
     align-items: center;
 }
 h4{
-    color:chartreuse;
-    text-align: center;
-    align-items: center;
+    color:#20b2aa;
 }
 .intro{
     color:black;
     opacity: .1%;
 }
 #full{
-    color:lightseagreen;
+    color:#20b2aa;
     opacity: 0%;
 }
 #full2{
-    color:lightseagreen;
+    color:#20b2aa;
     top: 50%;
     left: 50%;
     opacity: 0%;
+}
+#games{
+
+    text-align: center;
 }
 #main{
     opacity: 0;
