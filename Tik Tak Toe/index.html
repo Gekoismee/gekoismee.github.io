@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="header">
+        <a href="../index.html"><button>Home</button></a>
+        <h1>Welcome to Tic Tac Toe!</h1>
+        <h4 id="state">Click in any box to start the game.</h4>
+        <button id="resetButton" onclick="reset()" style="opacity:0;">Reset</button>
+    </div>
+    <div id="game-background">
+        <svg width="600" height="600">
+            <line x1="200" y1="0" x2="200" y2="600" style="stroke:lightseagreen;stroke-width:2"></line>
+            <line x1="400" y1="0" x2="400" y2="600" style="stroke:lightseagreen;stroke-width:2"></line>
+            <line x1="0" y1="200" x2="600" y2="200" style="stroke:lightseagreen;stroke-width:2"></line>
+            <line x1="0" y1="400" x2="600" y2="400" style="stroke:lightseagreen;stroke-width:2"></line>
+        </svg>
+    </div>
+    <div id="game">
+        <svg width="600" height="600">
+            <circle cx="100" cy="100" r="50" style="stroke:lightseagreen;stroke-width:2;opacity:0" id="a1c" onclick="select('a1c')"></circle>
+            <circle cx="300" cy="100" r="50" style="stroke:lightseagreen;stroke-width:2;opacity:0" id="a2c" onclick="select('a2c')"></circle>
+            <circle cx="500" cy="100" r="50" style="stroke:lightseagreen;stroke-width:2;opacity:0" id="a3c" onclick="select('a3c')"></circle>
+            <circle cx="100" cy="300" r="50" style="stroke:lightseagreen;stroke-width:2;opacity:0" id="b1c" onclick="select('b1c')"></circle>
+            <circle cx="300" cy="300" r="50" style="stroke:lightseagreen;stroke-width:2;opacity:0" id="b2c" onclick="select('b2c')"></circle>
+            <circle cx="500" cy="300" r="50" style="stroke:lightseagreen;stroke-width:2;opacity:0" id="b3c" onclick="select('b3c')"></circle>
+            <circle cx="100" cy="500" r="50" style="stroke:lightseagreen;stroke-width:2;opacity:0" id="c1c" onclick="select('c1c')"></circle>
+            <circle cx="300" cy="500" r="50" style="stroke:lightseagreen;stroke-width:2;opacity:0" id="c2c" onclick="select('c2c')"></circle>
+            <circle cx="500" cy="500" r="50" style="stroke:lightseagreen;stroke-width:2;opacity:0" id="c3c" onclick="select('c3c')"></circle>
+
+            <line x1="50" y1="50" x2="150" y2="150" style="stroke:lightseagreen;stroke-width: 2;opacity:0" id="a1x1"></line>
+            <line x1="50" y1="150" x2="150" y2="50" style="stroke:lightseagreen;stroke-width: 2;opacity:0" id="a1x2"></line>
+            <line x1="250" y1="50" x2="350" y2="150" style="stroke:lightseagreen;stroke-width: 2;opacity:0" id="a2x1"></line>
+            <line x1="250" y1="150" x2="350" y2="50" style="stroke:lightseagreen;stroke-width: 2;opacity:0" id="a2x2"></line>
+            <line x1="450" y1="50" x2="550" y2="150" style="stroke:lightseagreen;stroke-width: 2;opacity:0" id="a3x1"></line>
+            <line x1="450" y1="150" x2="550" y2="50" style="stroke:lightseagreen;stroke-width: 2;opacity:0" id="a3x2"></line>
+            <line x1="50" y1="250" x2="150" y2="350" style="stroke:lightseagreen;stroke-width: 2;opacity:0" id="b1x1"></line>
+            <line x1="50" y1="350" x2="150" y2="250" style="stroke:lightseagreen;stroke-width: 2;opacity:0" id="b1x2"></line>
+            <line x1="250" y1="250" x2="350" y2="350" style="stroke:lightseagreen;stroke-width: 2;opacity:0" id="b2x1"></line>
+            <line x1="250" y1="350" x2="350" y2="250" style="stroke:lightseagreen;stroke-width: 2;opacity:0" id="b2x2"></line>
+            <line x1="450" y1="250" x2="550" y2="350" style="stroke:lightseagreen;stroke-width: 2;opacity:0" id="b3x1"></line>
+            <line x1="450" y1="350" x2="550" y2="250" style="stroke:lightseagreen;stroke-width: 2;opacity:0" id="b3x2"></line>
+            <line x1="50" y1="450" x2="150" y2="550" style="stroke:lightseagreen;stroke-width: 2;opacity:0" id="c1x1"></line>
+            <line x1="50" y1="550" x2="150" y2="450" style="stroke:lightseagreen;stroke-width: 2;opacity:0" id="c1x2"></line>
+            <line x1="250" y1="450" x2="350" y2="550" style="stroke:lightseagreen;stroke-width: 2;opacity:0" id="c2x1"></line>
+            <line x1="250" y1="550" x2="350" y2="450" style="stroke:lightseagreen;stroke-width: 2;opacity:0" id="c2x2"></line>
+            <line x1="450" y1="450" x2="550" y2="550" style="stroke:lightseagreen;stroke-width: 2;opacity:0" id="c3x1"></line>
+            <line x1="450" y1="550" x2="550" y2="450" style="stroke:lightseagreen;stroke-width: 2;opacity:0" id="c3x2"></line>
+        </svg>
+    </div>
+    
+<script src="js/tic_tac_toe.js"></script>
+</body>
