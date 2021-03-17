@@ -7,6 +7,9 @@ let currentKing;
 let random;
 let totalCPU;
 let toMoveCPU;
+let isOver = false;
+let totalWhite;
+let totalGreen;
 let game = [
     1,
     1,
@@ -3385,7 +3388,8 @@ if(place=='a1c'&&(game[0]==5||game[0]==7)){
 }
 
 function colorUpdate(){
-    setTimeout(function(){
+    totalGreen = 0;
+    totalWhite = 0;
         for(let i = 0;i<game.length;i++){
             if(game[i]==0){
                 temp = toHTML(gameKey[i].concat('k'));
@@ -3401,6 +3405,7 @@ function colorUpdate(){
                 temp = toHTML(gameKey[i]);
                 temp.style.fill = 'lightseagreen';
                 temp.style.stroke = 'lightseagreen';
+                totalGreen++;
             }else if(game[i]==2){
                 temp = toHTML(gameKey[i].concat('k'));
                 temp.style.opacity = '0';
@@ -3408,6 +3413,7 @@ function colorUpdate(){
                 temp = toHTML(gameKey[i]);
                 temp.style.fill = 'white';
                 temp.style.stroke = 'white';
+                totalWhite++;
             }else if(game[i]==3){
                 temp = toHTML(gameKey[i].concat('k'));
                 temp.style.opacity = '1';
@@ -3415,6 +3421,7 @@ function colorUpdate(){
                 temp = toHTML(gameKey[i]);
                 temp.style.fill = 'lightseagreen';
                 temp.style.stroke = 'lightseagreen';
+                totalGreen++;
             }else if(game[i]==4){
                 temp = toHTML(gameKey[i].concat('k'));
                 temp.style.opacity = '1';
@@ -3422,6 +3429,7 @@ function colorUpdate(){
                 temp = toHTML(gameKey[i]);
                 temp.style.fill = 'white';
                 temp.style.stroke = 'white';
+                totalWhite++;
             }else if(game[i]==5){
                 temp = toHTML(gameKey[i].concat('k'));
                 temp.style.opacity = '0';
@@ -3445,8 +3453,16 @@ function colorUpdate(){
                 temp.style.stroke = 'red';
             }
         }
-    }, 100);
-    
+    if(totalGreen==0||totalWhite==0){
+        temp = toHTML('resetButton');
+        temp.style.opacity = 1;
+        temp = toHTML('winText');
+        if(totalGreen==0){
+            temp.innerHTML = 'User wins! Click the button to reset.';
+        }else if(totalWhite==0){
+            temp.innerHTML = 'CPU wins! Click the button to reset.';
+        }
+    }
 }
 
 function toHTML(name){
@@ -3516,4 +3532,46 @@ function computerPlay(){
     unselectCPU();
     colorUpdate();
 }
+}
+
+function reset(){
+    game = [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+    ]
+    colorUpdate();
+    temp = toHTML('resetButton');
+    temp.style.opacity = 0;
+    temp = toHTML('winText');
+    temp.innerHTML = 'Click a white cherker to start the game.';
 }
