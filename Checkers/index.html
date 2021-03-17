@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body onclick="colorUpdate()">
+    <div id="header">
+        <a href="../index.html"><button>Home</button></a>
+        <h1>Welcome to checkers!</h1>
+        <h4>Click a white checker to start the game.</h4>
+        <button id="resetButton" onclick="reset()" style="opacity:0;">Reset</button>
+    </div>
+    <div id="game-background">
+        <svg width="801" height="801">
+            <line x1="1" y1="0" x2="1" y2="900" style="stroke:lightseagreen;stroke-width:2"></line>
+            <line x1="100" y1="0" x2="100" y2="900" style="stroke:lightseagreen;stroke-width:2"></line>
+            <line x1="200" y1="0" x2="200" y2="900" style="stroke:lightseagreen;stroke-width:2"></line>
+            <line x1="300" y1="0" x2="300" y2="900" style="stroke:lightseagreen;stroke-width:2"></line>
+            <line x1="400" y1="0" x2="400" y2="900" style="stroke:lightseagreen;stroke-width:2"></line>
+            <line x1="500" y1="0" x2="500" y2="900" style="stroke:lightseagreen;stroke-width:2"></line>
+            <line x1="600" y1="0" x2="600" y2="900" style="stroke:lightseagreen;stroke-width:2"></line>
+            <line x1="700" y1="0" x2="700" y2="900" style="stroke:lightseagreen;stroke-width:2"></line>
+            <line x1="800" y1="0" x2="800" y2="900" style="stroke:lightseagreen;stroke-width:2"></line>
+            <line x1="0" y1="1" x2="900" y2="1" style="stroke:lightseagreen;stroke-width:2"></line>
+            <line x1="0" y1="100" x2="900" y2="100" style="stroke:lightseagreen;stroke-width:2"></line>
+            <line x1="0" y1="200" x2="900" y2="200" style="stroke:lightseagreen;stroke-width:2"></line>
+            <line x1="0" y1="300" x2="900" y2="300" style="stroke:lightseagreen;stroke-width:2"></line>
+            <line x1="0" y1="400" x2="900" y2="400" style="stroke:lightseagreen;stroke-width:2"></line>
+            <line x1="0" y1="500" x2="900" y2="500" style="stroke:lightseagreen;stroke-width:2"></line>
+            <line x1="0" y1="600" x2="900" y2="600" style="stroke:lightseagreen;stroke-width:2"></line>
+            <line x1="0" y1="700" x2="900" y2="700" style="stroke:lightseagreen;stroke-width:2"></line>
+            <line x1="0" y1="800" x2="900" y2="800" style="stroke:lightseagreen;stroke-width:2"></line>
+        </svg>
+    </div>
+    <div id="game">
+        <svg width="801" height="801">
+            <circle cx="50" cy="50" r="25" style="stroke:lightseagreen;stroke-width:2;fill:lightseagreen;opacity:1" id="a1c" onclick="select('a1c')"></circle>
+            <circle cx="250" cy="50" r="25" style="stroke:lightseagreen;stroke-width:2;fill:lightseagreen;opacity:1" id="a2c" onclick="select('a2c')"></circle>
+            <circle cx="450" cy="50" r="25" style="stroke:lightseagreen;stroke-width:2;fill:lightseagreen;opacity:1" id="a3c" onclick="select('a3c')"></circle>
+            <circle cx="650" cy="50" r="25" style="stroke:lightseagreen;stroke-width:2;fill:lightseagreen;opacity:1" id="a4c" onclick="select('a4c')"></circle>
+            <circle cx="150" cy="150" r="25" style="stroke:lightseagreen;stroke-width:2;fill:lightseagreen;opacity:1" id="b1c" onclick="select('b1c')"></circle>
+            <circle cx="350" cy="150" r="25" style="stroke:lightseagreen;stroke-width:2;fill:lightseagreen;opacity:1" id="b2c" onclick="select('b2c')"></circle>
+            <circle cx="550" cy="150" r="25" style="stroke:lightseagreen;stroke-width:2;fill:lightseagreen;opacity:1" id="b3c" onclick="select('b3c')"></circle>
+            <circle cx="750" cy="150" r="25" style="stroke:lightseagreen;stroke-width:2;fill:lightseagreen;opacity:1" id="b4c" onclick="select('b4c')"></circle>
+            <circle cx="50" cy="250" r="25" style="stroke:lightseagreen;stroke-width:2;fill:lightseagreen;opacity:1" id="c1c" onclick="select('c1c')"></circle>
+            <circle cx="250" cy="250" r="25" style="stroke:lightseagreen;stroke-width:2;fill:lightseagreen;opacity:1" id="c2c" onclick="select('c2c')"></circle>
+            <circle cx="450" cy="250" r="25" style="stroke:lightseagreen;stroke-width:2;fill:lightseagreen;opacity:1" id="c3c" onclick="select('c3c')"></circle>
+            <circle cx="650" cy="250" r="25" style="stroke:lightseagreen;stroke-width:2;fill:lightseagreen;opacity:1" id="c4c" onclick="select('c4c')"></circle>
+
+            <circle cx="150" cy="350" r="25" style="stroke:black;stroke-width:2;fill:black;opacity:1" id="d1c" onclick="select('d1c')"></circle>
+            <circle cx="350" cy="350" r="25" style="stroke:black;stroke-width:2;fill:black;opacity:1" id="d2c" onclick="select('d2c')"></circle>
+            <circle cx="550" cy="350" r="25" style="stroke:black;stroke-width:2;fill:black;opacity:1" id="d3c" onclick="select('d3c')"></circle>
+            <circle cx="750" cy="350" r="25" style="stroke:black;stroke-width:2;fill:black;opacity:1" id="d4c" onclick="select('d4c')"></circle>
+            <circle cx="50" cy="450" r="25" style="stroke:black;stroke-width:2;fill:black;opacity:1" id="e1c" onclick="select('e1c')"></circle>
+            <circle cx="250" cy="450" r="25" style="stroke:black;stroke-width:2;fill:black;opacity:1" id="e2c" onclick="select('e2c')"></circle>
+            <circle cx="450" cy="450" r="25" style="stroke:black;stroke-width:2;fill:black;opacity:1" id="e3c" onclick="select('e3c')"></circle>
+            <circle cx="650" cy="450" r="25" style="stroke:black;stroke-width:2;fill:black;opacity:1" id="e4c" onclick="select('e4c')"></circle>
+
+            <circle cx="150" cy="550" r="25" style="stroke:white;stroke-width:2;fill:white;opacity:1" id="f1c" onclick="select('f1c')"></circle>
+            <circle cx="350" cy="550" r="25" style="stroke:white;stroke-width:2;fill:white;opacity:1" id="f2c" onclick="select('f2c')"></circle>
+            <circle cx="550" cy="550" r="25" style="stroke:white;stroke-width:2;fill:white;opacity:1" id="f3c" onclick="select('f3c')"></circle>
+            <circle cx="750" cy="550" r="25" style="stroke:white;stroke-width:2;fill:white;opacity:1" id="f4c" onclick="select('f4c')"></circle>
+            <circle cx="50" cy="650" r="25" style="stroke:white;stroke-width:2;fill:white;opacity:1" id="g1c" onclick="select('g1c')"></circle>
+            <circle cx="250" cy="650" r="25" style="stroke:white;stroke-width:2;fill:white;opacity:1" id="g2c" onclick="select('g2c')"></circle>
+            <circle cx="450" cy="650" r="25" style="stroke:white;stroke-width:2;fill:white;opacity:1" id="g3c" onclick="select('g3c')"></circle>
+            <circle cx="650" cy="650" r="25" style="stroke:white;stroke-width:2;fill:white;opacity:1" id="g4c" onclick="select('g4c')"></circle>
+            <circle cx="150" cy="750" r="25" style="stroke:white;stroke-width:2;fill:white;opacity:1" id="h1c" onclick="select('h1c')"></circle>
+            <circle cx="350" cy="750" r="25" style="stroke:white;stroke-width:2;fill:white;opacity:1" id="h2c" onclick="select('h2c')"></circle>
+            <circle cx="550" cy="750" r="25" style="stroke:white;stroke-width:2;fill:white;opacity:1" id="h3c" onclick="select('h3c')"></circle>
+            <circle cx="750" cy="750" r="25" style="stroke:white;stroke-width:2;fill:white;opacity:1" id="h4c" onclick="select('h4c')"></circle>
+
+            <text x="40" y="60" style="fill:Black;opacity:0" id="a1ck" onclick="select('a1c')"></text>
+            <text x="240" y="60" style="fill:Black;opacity:0" id="a2ck" onclick="select('a2c')"></text>
+            <text x="440" y="60" style="fill:Black;opacity:0" id="a3ck" onclick="select('a3c')"></text>
+            <text x="640" y="60" style="fill:Black;opacity:0" id="a4ck" onclick="select('a4c')"></text>
+            <text x="140" y="160" style="fill:Black;opacity:0" id="b1ck" onclick="select('b1c')"></text>
+            <text x="340" y="160" style="fill:Black;opacity:0" id="b2ck" onclick="select('b2c')"></text>
+            <text x="540" y="160" style="fill:Black;opacity:0" id="b3ck" onclick="select('b3c')"></text>
+            <text x="740" y="160" style="fill:Black;opacity:0" id="b4ck" onclick="select('b4c')"></text>
+            <text x="40" y="260" style="fill:Black;opacity:0" id="c1ck" onclick="select('c1c')"></text>
+            <text x="240" y="260" style="fill:Black;opacity:0" id="c2ck" onclick="select('c2c')"></text>
+            <text x="440" y="260" style="fill:Black;opacity:0" id="c3ck" onclick="select('c3c')"></text>
+            <text x="640" y="260" style="fill:Black;opacity:0" id="c4ck" onclick="select('c4c')"></text>
+            <text x="140" y="360" style="fill:Black;opacity:0" id="d1ck" onclick="select('d1c')"></text>
+            <text x="340" y="360" style="fill:Black;opacity:0" id="d2ck" onclick="select('d2c')"></text>
+            <text x="540" y="360" style="fill:Black;opacity:0" id="d3ck" onclick="select('d3c')"></text>
+            <text x="740" y="360" style="fill:Black;opacity:0" id="d4ck" onclick="select('d4c')"></text>
+            <text x="40" y="460" style="fill:Black;opacity:0" id="e1ck" onclick="select('e1c')"></text>
+            <text x="240" y="460" style="fill:Black;opacity:0" id="e2ck" onclick="select('e2c')"></text>
+            <text x="440" y="460" style="fill:Black;opacity:0" id="e3ck" onclick="select('e3c')"></text>
+            <text x="640" y="460" style="fill:Black;opacity:0" id="e4ck" onclick="select('e4c')"></text>
+            <text x="140" y="560" style="fill:Black;opacity:0" id="f1ck" onclick="select('f1c')"></text>
+            <text x="340" y="560" style="fill:Black;opacity:0" id="f2ck" onclick="select('f2c')"></text>
+            <text x="540" y="560" style="fill:Black;opacity:0" id="f3ck" onclick="select('f3c')"></text>
+            <text x="740" y="560" style="fill:Black;opacity:0" id="f4ck" onclick="select('f4c')"></text>
+            <text x="40" y="660" style="fill:Black;opacity:0" id="g1ck" onclick="select('g1c')"></text>
+            <text x="240" y="660" style="fill:Black;opacity:0" id="g2ck" onclick="select('g2c')"></text>
+            <text x="440" y="660" style="fill:Black;opacity:0" id="g3ck" onclick="select('g3c')"></text>
+            <text x="640" y="660" style="fill:Black;opacity:0" id="g4ck" onclick="select('g4c')"></text>
+            <text x="140" y="760" style="fill:Black;opacity:0" id="h1ck" onclick="select('h1c')"></text>
+            <text x="340" y="760" style="fill:Black;opacity:0" id="h2ck" onclick="select('h2c')"></text>
+            <text x="540" y="760" style="fill:Black;opacity:0" id="h3ck" onclick="select('h3c')"></text>
+            <text x="740" y="760" style="fill:Black;opacity:0" id="h4ck" onclick="select('h4c')"></text>
+        </svg>
+    </div>
+    <script src="js/checkers.js"></script>
+</body>
