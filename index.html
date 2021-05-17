@@ -11,7 +11,7 @@
         <h1 id="let2"><span class="intro">G</span>e<span class="intro">koismee</span></h1>
         <h1 id="let3"><span class="intro">Ge</span>k<span class="intro">oismee</span></h1>
         <h1 id="let4"><span class="intro">Gek</span>o<span class="intro">ismee</span></h1>
-        <h1 id="full">Geko<span id="full2">ismee</span></h1>
+        <h1 id="full"><span id="select" onclick="loadBox()">G</span>eko<span id="full2">ismee</span></h1>
         <!--Main Content-->
         <div id="main">
             <h2>Welcome to my Portfolio, use the links below to see my projects.</h2>
@@ -21,7 +21,16 @@
                 <a href="Checkers/index.html"><button>Checkers</button></a>
             </div>
         </div>
-        
+        <div id="hehe" style="text-align: center; opacity: 0;">
+        <h3>Haha you found me =)</h3>
+        <textarea id="box" style="position: relative;"placeholder="=)"></textarea>
+        <br>
+        <button id="submit" onclick="isCorrect()">Submit</button>
+        <h2 id="correct1"></h2>
+        <h2 id="correct2"></h2>
+        <h2 id="correct3"></h2>
+        <h2 id="correct4"></h2>
+        </div>
         <!--Scripts-->
        <script typr="text/javascript" src="js/intro_animation.js"></script>
        <script typr="text/javascript" src="js/test_game.js"></script>
