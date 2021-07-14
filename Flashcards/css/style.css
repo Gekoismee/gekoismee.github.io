@@ -1,0 +1,43 @@
+a{
+    color: white;
+    text-decoration: none;
+}
+a:hover{
+    color:lightseagreen;
+}
+button{
+    background-color:black;
+    color:white;
+    text-align: center;
+    border-radius: 10px;
+}
+button:hover{
+    background-color: lightseagreen;
+}
+svg{
+    color:white;
+}
+ul{
+    list-style-type: none;
+}
+.picked{
+    color:lightseagreen;
+    background-color: black;
+}
+.selected{
+    color:lightseagreen;
+}
+.unpicked{
+    color:black;
+    background-color: white;
+}
+.unpicked:hover{
+    color:lightseagreen;
+    background-color: black;
+}
+#content{
+    text-align: center;
+}
+#nav{
+    align-items: flex-start;
+}
