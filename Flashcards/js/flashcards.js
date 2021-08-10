@@ -12,6 +12,7 @@ let incorrect = document.getElementById('incorrect');
 let chosenAnswer = document.getElementById('chosenAnswer');
 let correctIncorrect = document.getElementById('correctIncorrect');
 let rawChoices = [];
+let fixedChoices = [];
 let questionChoices = [];
 let currentQuestion;
 let currentQuestionNumber = 0;
@@ -22,17 +23,33 @@ let currentIncorrect = 0;
 let correctAnswer;
 let answered = [];
 let answeredChoices = [];
+let temp;
 function loadChoices(){
 
     if(!window.localStorage.choices||window.localStorage.choices=='null'){
         question.innerHTML = "I'm drawing a blank...";
     }else{
-    rawChoices = window.localStorage.choices;
+    rawChoices = localStorage.getItem("choices");
+    if(rawChoices.indexOf(",")==-1){
+        if(rawChoices.length == 2){
+            temp = rawChoices[0].toString();
+            temp = temp.concat(rawChoices[1].toString());
+            fixedChoices[0] = temp;
+        }else{
+            fixedChoices[0] = rawChoices;
+        }
+    }else{
+        for(let i = 0; i < rawChoices.length; i=i+3){
+            temp = rawChoices[i].toString();
+            temp = temp.concat(rawChoices[i+1].toString());
+            fixedChoices[i] = temp; 
+        }
+    }
     question.innerHTML = "Loading";
     help.innerHTML = "Please hold";
-    for(let i = 0; i < rawChoices.length;i++){
+    for(let i = 0; i < fixedChoices.length;i++){
         for(let j = 0; j <deck.length;j++){
-            if(deck[j].Chapter==rawChoices[i]){
+            if(deck[j].Chapter==fixedChoices[i]){
                 questionChoices.push(deck[j].UUID);
             }
         }
@@ -71,10 +88,12 @@ function updateData(){
             currentQuestionDeckNumber = i;
         }
     }
+    correctAnswer = deck[currentQuestionDeckNumber].Correct;
     for(let i = 0; i < answered.length; i++){
         if(currentQuestion==answered[i]){
+            if(answeredChoices[i]!='null'){
             chosenAnswer.innerHTML = "You answered this question with : "+answeredChoices[i];
-            correctAnswer = deck[currentQuestionDeckNumber].Correct;
+        }
     if(answeredChoices[i]==correctAnswer){
         correctIncorrect.innerHTML = "Correct!";
     }else{
@@ -89,7 +108,11 @@ function updateData(){
         }else if(correctAnswer=="D"){
             temp = deck[currentQuestionNumber].D;
         }
+        if(answeredChoices[i]!='null'){
         correctIncorrect.innerHTML = "Incorrect Answer <br> The correct answer is: <br>"+correctAnswer+" : "+temp;
+        }else{
+            correctIncorrect.innerHTML = "The correct answer is: <br>"+correctAnswer+" : "+temp;
+        }
     }
         }
     }
@@ -139,3 +162,18 @@ function shuffle(){
     correctIncorrect.innerHTML = "";
     updateData();
 }
+document.addEventListener("keypress", function(event) {
+	if(event.key=='A'){
+        for(let i = 0; i < answered.length; i++){
+            if(currentQuestion==answered[i]){
+                answered.splice(i,1);
+                answeredChoices.splice(i,1);
+                correctIncorrect.innerHTML = "";
+                return;
+            }
+        }
+        answered.push(currentQuestion);
+        answeredChoices.push('null');
+        updateData();
+    }
+});
