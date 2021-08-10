@@ -3,6 +3,7 @@ let applyBtn = document.getElementById('applyBtn');
 
 let temp;
 let choices=[];
+let finalChoices=" ";
 
 function pick(self){
     temp = toHTML(self);
