@@ -14,7 +14,7 @@ let correctIncorrect = document.getElementById('correctIncorrect');
 let rawChoices = [];
 let fixedChoices = [];
 let questionChoices = [];
-let currentQuestion;
+let currentQuestion = 0;
 let currentQuestionNumber = 0;
 let currentQuestionDeckNumber;
 let currentStreak = 0;
@@ -30,20 +30,29 @@ function loadChoices(){
         question.innerHTML = "I'm drawing a blank...";
     }else{
     rawChoices = localStorage.getItem("choices");
-    if(rawChoices.indexOf(",")==-1){
-        if(rawChoices.length == 2){
-            temp = rawChoices[0].toString();
-            temp = temp.concat(rawChoices[1].toString());
-            fixedChoices[0] = temp;
-        }else{
-            fixedChoices[0] = rawChoices;
+    
+    for(let i = 0; i < rawChoices.length; i++)
+    {
+        if(rawChoices[i] == ',')
+        {
+            if(rawChoices[i-2] == ',' && rawChoices[i-2] != 'null')
+            {
+                fixedChoices.push(rawChoices[i-1]);
+            }
+            else{
+                temp = rawChoices[i-2] + rawChoices[i-1];
+                fixedChoices.push(temp);
+            }
         }
-    }else{
-        for(let i = 0; i < rawChoices.length; i=i+3){
-            temp = rawChoices[i].toString();
-            temp = temp.concat(rawChoices[i+1].toString());
-            fixedChoices[i] = temp; 
-        }
+    }
+    if(rawChoices[1] == ',')
+    {
+    fixedChoices[0] = rawChoices[0];
+    }
+    else
+    {
+        temp = rawChoices[0] + rawChoices[1];
+    fixedChoices[0] = temp;
     }
     question.innerHTML = "Loading";
     help.innerHTML = "Please hold";
