@@ -31,6 +31,7 @@ function setChoices(){
             choices.push(i);
         }
     }
+    choices.push('A');
     window.localStorage.choices = choices;
     applyBtn.innerHTML = 'Applied!';
     
