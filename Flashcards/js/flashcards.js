@@ -109,13 +109,13 @@ function updateData(){
         currentStreak = 0;
         let temp;
         if(correctAnswer=="A"){
-            temp = deck[currentQuestionNumber].A;
+            temp = deck[currentQuestionDeckNumber].A;
         }else if(correctAnswer=="B"){
-            temp = deck[currentQuestionNumber].B;
+            temp = deck[currentQuestionDeckNumber].B;
         }else if(correctAnswer=="C"){
-            temp = deck[currentQuestionNumber].C;
+            temp = deck[currentQuestionDeckNumber].C;
         }else if(correctAnswer=="D"){
-            temp = deck[currentQuestionNumber].D;
+            temp = deck[currentQuestionDeckNumber].D;
         }
         if(answeredChoices[i]!='null'){
         correctIncorrect.innerHTML = "Incorrect Answer <br> The correct answer is: <br>"+correctAnswer+" : "+temp;
