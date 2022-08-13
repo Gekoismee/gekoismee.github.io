@@ -11,10 +11,10 @@ let correct = document.getElementById('correct');
 let incorrect = document.getElementById('incorrect');
 let chosenAnswer = document.getElementById('chosenAnswer');
 let correctIncorrect = document.getElementById('correctIncorrect');
-let rawChoices = [];
+let rawChoices;
 let fixedChoices = [];
 let questionChoices = [];
-let currentQuestion = 0;
+let currentQuestion;
 let currentQuestionNumber = 0;
 let currentQuestionDeckNumber;
 let currentStreak = 0;
@@ -24,45 +24,43 @@ let correctAnswer;
 let answered = [];
 let answeredChoices = [];
 let temp;
+let chapter;
 function loadChoices(){
 
     if(!window.localStorage.choices||window.localStorage.choices=='null'){
         question.innerHTML = "I'm drawing a blank...";
     }else{
     rawChoices = localStorage.getItem("choices");
-    
-    for(let i = 0; i < rawChoices.length; i++)
-    {
-        if(rawChoices[i] == ',')
-        {
-            if(rawChoices[i-2] == ',' && rawChoices[i-2] != 'null')
-            {
-                fixedChoices.push(rawChoices[i-1]);
-            }
-            else{
-                temp = rawChoices[i-2] + rawChoices[i-1];
-                fixedChoices.push(temp);
-            }
-        }
-    }
-    if(rawChoices[1] == ',')
-    {
-    fixedChoices[0] = rawChoices[0];
-    }
-    else
-    {
-        temp = rawChoices[0] + rawChoices[1];
-    fixedChoices[0] = temp;
-    }
+    fixedChoices = rawChoices.split(",");
     question.innerHTML = "Loading";
     help.innerHTML = "Please hold";
     for(let i = 0; i < fixedChoices.length;i++){
         for(let j = 0; j <deck.length;j++){
-            if(deck[j].Chapter==fixedChoices[i]){
+            chapter = fixedChoices[i];
+            if(chapter.length == 8)
+            {
+                chapter = chapter.substring(7,8);
+            }
+            else
+            {
+                chapter = chapter.substring(7,9);
+            }
+            let book = fixedChoices[i];
+            book = book.substring(0,1);
+            if(book == 'e')
+            {
+                book = 15;
+            }
+            else if(book == 'n')
+            {
+                book = 16;
+            }
+            if(deck[j].Chapter==chapter && deck[j].Book==book){
                 questionChoices.push(deck[j].UUID);
             }
         }
     }
+    //sort algorithm
     help.innerHTML = "";
     ani.style.opacity = 100;
     currentQuestion=questionChoices[0];
@@ -109,13 +107,13 @@ function updateData(){
         currentStreak = 0;
         let temp;
         if(correctAnswer=="A"){
-            temp = deck[currentQuestionDeckNumber].A;
+            temp = deck[currentQuestionNumber].A;
         }else if(correctAnswer=="B"){
-            temp = deck[currentQuestionDeckNumber].B;
+            temp = deck[currentQuestionNumber].B;
         }else if(correctAnswer=="C"){
-            temp = deck[currentQuestionDeckNumber].C;
+            temp = deck[currentQuestionNumber].C;
         }else if(correctAnswer=="D"){
-            temp = deck[currentQuestionDeckNumber].D;
+            temp = deck[currentQuestionNumber].D;
         }
         if(answeredChoices[i]!='null'){
         correctIncorrect.innerHTML = "Incorrect Answer <br> The correct answer is: <br>"+correctAnswer+" : "+temp;
