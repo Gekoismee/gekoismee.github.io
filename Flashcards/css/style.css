@@ -20,12 +20,30 @@ svg{
 ul{
     list-style-type: none;
 }
+.container{
+    margin: auto;
+    
+}
+.dummy{
+    visibility: hidden;
+}
+.noQ:hover{
+    background-color: gray;
+    
+}
+.noQ{
+    background-color: gray;
+    
+}
 .picked{
     color:lightseagreen;
     background-color: black;
 }
 .selected{
     color:lightseagreen;
+}
+.title{
+    text-align: center;
 }
 .unpicked{
     color:black;
