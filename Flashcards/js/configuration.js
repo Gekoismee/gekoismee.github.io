@@ -9,9 +9,20 @@ function pick(self){
     if(temp.classList.contains('unpicked')){
         temp.classList.remove('unpicked');
         temp.classList.add('picked');
+        choices.push(self);
     }else if(temp.classList.contains('picked')){
         temp.classList.remove('picked');
         temp.classList.add('unpicked');
+        let a = choices.indexOf(self);
+        choices[a] = null;
+        if(choices.length-1 > a)
+        {
+            for(let i = a; i < choices.length-1; i++)
+            {
+                choices[i] = choices[i+1];
+            }
+        }
+        choices.pop();
     }
 }
 
@@ -20,18 +31,7 @@ function toHTML(name){
 }
 
 function setChoices(){
-    for(let i = 0; i < 25;i++){
-        choices.pop();
-    }
-    let choice = 'choice';
-    for(let i = 1; i <25;i++){
-        temp = choice.concat(i);
-        let temp2 = toHTML(temp);
-        if(temp2.classList.contains('picked')){
-            choices.push(i);
-        }
-    }
-    choices.push('A');
+    
     window.localStorage.choices = choices;
     applyBtn.innerHTML = 'Applied!';
     
