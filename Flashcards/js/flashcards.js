@@ -140,7 +140,7 @@ function updateData(){
     {
         firstPart = bookPart.slice(0, bookPart.indexOf('Nehemiah'));
         bookPart = bookPart.slice(bookPart.indexOf('Nehemiah'),bookPart.length);
-        questionText = firstPart + "<a href=\"https://www.biblegateway.com/passage/?search=Nehemiah+"+deck[currentQuestionDeckNumber].Chapter+"&version=NKJV\">"+bookPart+"</a>"+lastPart;
+        questionText = firstPart + "<a href=\"https://www.biblegateway.com/passage/?search=Nehemiah+"+deck[currentQuestionDeckNumber].Chapter+"&version=NKJV\" target=\"blank\">"+bookPart+"</a>"+lastPart;
 
     }
 
