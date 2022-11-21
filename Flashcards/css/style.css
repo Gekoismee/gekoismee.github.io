@@ -1,5 +1,5 @@
 a{
-    color: white;
+    color:white;
     text-decoration: none;
 }
 a:hover{
@@ -39,6 +39,7 @@ ul{
     color:lightseagreen;
     background-color: black;
 }
+
 .selected{
     color:lightseagreen;
 }
@@ -58,4 +59,7 @@ ul{
 }
 #nav{
     align-items: flex-start;
+}
+#question a{
+    color:#0000ee;
 }
