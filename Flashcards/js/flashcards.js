@@ -95,6 +95,7 @@ function updateData(){
             currentQuestionDeckNumber = i;
         }
     }
+    
     correctAnswer = deck[currentQuestionDeckNumber].Correct;
     for(let i = 0; i < answered.length; i++){
         if(currentQuestion==answered[i]){
@@ -124,7 +125,27 @@ function updateData(){
         }
     }
 
-    question.innerHTML = deck[currentQuestionDeckNumber].Question;
+    let questionText = deck[currentQuestionDeckNumber].Question;
+    let bookPart = questionText.slice(0,questionText.indexOf(','));
+    let lastPart = questionText.slice(questionText.indexOf(','),questionText.length);
+    let firstPart;
+    if(deck[currentQuestionDeckNumber].Book == 15)
+    {
+        firstPart = bookPart.slice(0, bookPart.indexOf('Ezra'));
+        bookPart = bookPart.slice(bookPart.indexOf('Ezra'),bookPart.length);
+        questionText = firstPart + "<a href=\"https://www.biblegateway.com/passage/?search=Ezra+"+deck[currentQuestionDeckNumber].Chapter+"&version=NKJV\" target=\"blank\">"+bookPart+"</a>"+lastPart;
+
+    }
+    else if(deck[currentQuestionDeckNumber].Book == 16)
+    {
+        firstPart = bookPart.slice(0, bookPart.indexOf('Nehemiah'));
+        bookPart = bookPart.slice(bookPart.indexOf('Nehemiah'),bookPart.length);
+        questionText = firstPart + "<a href=\"https://www.biblegateway.com/passage/?search=Nehemiah+"+deck[currentQuestionDeckNumber].Chapter+"&version=NKJV\">"+bookPart+"</a>"+lastPart;
+
+    }
+
+
+    question.innerHTML = questionText;
     a.innerHTML = "A. "+deck[currentQuestionDeckNumber].A;
     b.innerHTML = "B. "+deck[currentQuestionDeckNumber].B;
     c.innerHTML = "C. "+deck[currentQuestionDeckNumber].C;
