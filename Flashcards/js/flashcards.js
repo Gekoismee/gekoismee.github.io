@@ -45,16 +45,7 @@ function loadChoices(){
             {
                 chapter = chapter.substring(7,9);
             }
-            let book = fixedChoices[i];
-            book = book.substring(0,1);
-            if(book == 'e')
-            {
-                book = 15;
-            }
-            else if(book == 'n')
-            {
-                book = 16;
-            }
+            let book = 44;
             if(deck[j].Chapter==chapter && deck[j].Book==book){
                 questionChoices.push(deck[j].UUID);
             }
