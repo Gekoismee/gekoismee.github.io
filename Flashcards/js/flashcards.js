@@ -45,7 +45,7 @@ function loadChoices(){
             {
                 chapter = chapter.substring(7,9);
             }
-            let book = 44;
+            let book = 1;
             if(deck[j].Chapter==chapter && deck[j].Book==book){
                 questionChoices.push(deck[j].UUID);
             }
@@ -109,6 +109,12 @@ function updateData(){
         }
         if(answeredChoices[i]!='null'){
         correctIncorrect.innerHTML = "Incorrect Answer <br> The correct answer is: <br>"+correctAnswer+" : "+temp;
+       // let questionText = deck[currentQuestionDeckNumber].Question;
+        //let startLoc = questionText.indexOf("Romans") - 1;
+        //let firstPart = questionText.substring()
+       // questionText.
+        //https://www.biblegateway.com/passage/?search=Romans%205%3A1&version=Nkjv
+
         }else{
             correctIncorrect.innerHTML = "The correct answer is: <br>"+correctAnswer+" : "+temp;
         }

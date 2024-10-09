@@ -4,6 +4,21 @@ let applyBtn = document.getElementById('applyBtn');
 let temp;
 let choices=[];
 
+function selectAll(){
+    let selAll = document.querySelector("#selAll");
+    if(selAll.classList.contains('unpicked')){
+        selAll.classList.remove('unpicked');
+        selAll.classList.add('picked');
+    } else if(selAll.classList.contains('picked')){
+        selAll.classList.remove('picked');
+        selAll.classList.add('unpicked');
+    }
+    let buttons = document.querySelectorAll(".col");
+    for(let i = 0; i < buttons.length;i++){
+        buttons[i].click();
+    }
+}
+
 function pick(self){
     temp = toHTML(self);
     if(temp.classList.contains('unpicked')){
