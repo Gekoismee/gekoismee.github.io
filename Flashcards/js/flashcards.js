@@ -45,7 +45,7 @@ function loadChoices(){
             {
                 chapter = chapter.substring(7,9);
             }
-            let book = 1;
+            let book = 11;
             if(deck[j].Chapter==chapter && deck[j].Book==book){
                 questionChoices.push(deck[j].UUID);
             }
